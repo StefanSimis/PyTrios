@@ -53,7 +53,6 @@ def run_sample(port, repeat=1, type=1, inttime=0, file=None):
                 repeat = 0
             except Exception:
                 raise
-
     else:
         log.warning(f"Radiometry manager not ready. Exiting")
 

@@ -240,7 +240,6 @@ class TriosG2Ramses(object):
 
         self.busy = False
 
-
     def set_integration_time(self, inttime=0):
         self.busy = True
         inttime_index = int(log2(inttime)-1)
@@ -405,9 +404,7 @@ class TriosManager(object):
         self.sams = [k for k in self.tk if ps.tchannels[k].TInfo.ModuleType in ['SAM', 'SAMIP']]  # keys
         self.chns = [self.tc[k].TInfo.TID for k in self.sams]  # channel addressing
         self.sns = [self.tc[k].TInfo.serialn for k in self.sams]  # sensor ids
-
         log.info("found SAM modules: {0}".format(list(zip(self.chns, self.sns))))
-
 
     def sample_all(self, trigger_id, sams_included=None, inttime=0):
         """Send a command to take a spectral sample from every sensor currently detected by the program"""
